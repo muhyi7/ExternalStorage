@@ -34,8 +34,10 @@ public class MainActivity2 extends AppCompatActivity {
         File folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         File myfile = new File(folder, "myData1.txt");
         String text = getdata(myfile);
-        if (text != null){
+        if (!text.equals("")){
             showText.setText(text);
+        }else {
+            showText.setText("No Data");
         }
     }
 
@@ -43,7 +45,7 @@ public class MainActivity2 extends AppCompatActivity {
         File folder = getExternalFilesDir("arvita"); //nama folder
         File myFile = new File(folder,"myData2.txt");
         String text = getdata(myFile);
-        if (text != null){
+        if (!text.equals("")){
             showText.setText(text);
         }else {
             showText.setText("No Data");
